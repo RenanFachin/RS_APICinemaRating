@@ -15,6 +15,13 @@ app.get("/teste/:id/:user", (request, response) => {
     `)
 })
 
+// Query Params
+app.get("/users", (request, response) => {
+    const { page, limit } = request.query;
+
+    response.send(`Página: ${page}. Mostrar ${limit}`);
+});
+
 
 // Criando uma porta para atender as solicitações
 const PORT = 3333;
