@@ -1,4 +1,5 @@
-const knex = require("../database/knex")
+const knex = require("../database/knex");
+const AppError = require("../utils/AppError");
 
 class NotesController {
 
@@ -37,6 +38,14 @@ class NotesController {
             ...notes,
             tags
         })
+    }
+
+    async delete (request, response){
+        const { id } = request.params;
+
+        await knex("notes").where({ id }).delete();
+
+        return response.json();
     }
 
 }
