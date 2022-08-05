@@ -7,6 +7,12 @@ class NotesController {
         const { title, description, rating, tags } = request.body;
         const { user_id } = request.params;
 
+        if(rating < 1 || rating > 5 || rating % 1 !== 0)
+        {
+            throw new AppError ("Erro! Inserir um número inteiro maior que 1 e menor que 5")
+        }
+        else{
+
         const note_id = await knex ("notes").insert({
             title,
             description,
@@ -27,6 +33,7 @@ class NotesController {
         response.json();
 
     }
+}
 
     async show (request, response){
         const { id } = request.params;
