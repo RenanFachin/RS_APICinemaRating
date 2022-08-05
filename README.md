@@ -2,14 +2,6 @@
   <img alt="Logo Explorer" title="Explorer" src="./assets/logoExplorer.png">
 </div>
 
-<div align="center">
-
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/RenanFachin/RS_APICinemaRating">
-  
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/RenanFachin/RS_APICinemaRating/main?color=1280bf&style=plastic">
- 
-</div>
-
 # API - Cinema
 Desenvolvimento de uma API que concentrará dados de usuários, anotações dos filmes e tags de filmes. Projeto desenvolvido no desafio do stage 08 do programa Explorer da rockeseat
 

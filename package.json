@@ -1,0 +1,23 @@
+{
+  "name": "stage08---api_cinemarating",
+  "version": "1.0.0",
+  "description": "API desenvolvida no programa explorer da rockeseat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenanFachin/RS_APICinemaRating.git"
+  },
+  "keywords": [],
+  "author": "Renan Fachin | Programa Explorer @Rocketseat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RenanFachin/RS_APICinemaRating/issues"
+  },
+  "homepage": "https://github.com/RenanFachin/RS_APICinemaRating#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
