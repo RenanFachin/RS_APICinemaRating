@@ -1,3 +1,6 @@
+// Importando
+const database = require("./database/sqlite");
+
 // Importando a biblioteca do express async errors
 require("express-async-errors");
 // Importando o APP ERROR
@@ -12,6 +15,8 @@ const app = express();
 
 app.use(express.json());
 app.use(routes);
+
+database();
 
 app.use( ( error, request, response, next ) => {
     // sabendo de onde vem o erro, se for do lado do cliente
