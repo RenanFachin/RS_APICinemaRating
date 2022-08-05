@@ -4,6 +4,18 @@ const express = require("express");
 // Iniciando o express
 const app = express();
 
+
+// IMPLEMENTANDO O MÉTODO GET para quando for solicitado no /teste da porta 3333
+app.get("/teste/:id/:user", (request, response) => {
+    const { id, user } = request.params // Desestruturação
+
+    response.send(`
+        Mensagem de ID: ${id},
+        Para o usuário: ${user}.
+    `)
+})
+
+
 // Criando uma porta para atender as solicitações
 const PORT = 3333;
 
