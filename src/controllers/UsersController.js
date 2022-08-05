@@ -1,3 +1,6 @@
+// importando a função que vai gerar a criptografia da senha
+const { hash } = require("bcryptjs")
+
 // Importando o AppError
 const AppError = require("../utils/AppError");
 
@@ -24,9 +27,11 @@ class UsersController {
             throw new AppError("Este e-mail já está em uso.");
         }
 
+        const hashedPassword = await hash(password, 8);
+
         // Adicionando o usuário na tabela
         await database.run("INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
-        [name, email, password]);
+        [name, email, hashedPassword]);
 
         return response.status(201).json();
     }
