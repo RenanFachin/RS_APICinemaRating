@@ -1,5 +1,5 @@
 // Importando
-const database = require("./database/sqlite");
+const migrationsRun = require("./database/sqlite/migrations");
 
 // Importando a biblioteca do express async errors
 require("express-async-errors");
@@ -10,13 +10,16 @@ const AppError = require("./utils/AppError")
 const express = require("express");
 // Importando do index.js de routes a função routes que é executada quando algo é enviado pelo /users
 const routes = require("./routes");
+
+migrationsRun();
+
+
 // Criando a constante app para chamar a express que foi importada
 const app = express();
 
 app.use(express.json());
 app.use(routes);
 
-database();
 
 app.use( ( error, request, response, next ) => {
     // sabendo de onde vem o erro, se for do lado do cliente
