@@ -13,4 +13,8 @@ const usersController = new UsersControlller(); // Instanciando o UserController
 // Método POST
 usersRoutes.post("/", usersController.create);  // usersController tem a propriedade create que é a função criada
 
+// método PUT para update do usuário
+usersRoutes.put("/:id", usersController.update)
+
+
 module.exports = usersRoutes;
