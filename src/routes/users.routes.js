@@ -1,12 +1,16 @@
+// importando do express o ROUTER
 const { Router } = require("express");
 
+// importando o UserControlller da pasta controllers
+const UsersControlller = require("../controllers/UsersController")
+
+// Inicializando a função ROUTER que veio do express e armazenando na constante usersRouters
 const usersRoutes = Router();
 
-// Método POST
-usersRoutes.post("/", (request, response) => {
-    const { name, email, password } = request.body;
+// Instanciando
+const usersController = new UsersControlller(); // Instanciando o UserController
 
-    response.json({ name, email, password });
-});
+// Método POST
+usersRoutes.post("/", usersController.create);  // usersController tem a propriedade create que é a função criada
 
 module.exports = usersRoutes;

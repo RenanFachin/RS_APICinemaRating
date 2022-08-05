@@ -1,10 +1,11 @@
+// Importando o express e armazenando na constante express
 const express = require("express");
-
-const routes = require("./routes"); // acessa a index.js da pasta routes
-
+// Importando do index.js de routes a função routes que é executada quando algo é enviado pelo /users
+const routes = require("./routes");
+// Criando a constante app para chamar a express que foi importada
 const app = express();
-app.use(express.json());
 
+app.use(express.json());
 app.use(routes);
 
 const PORT = 3333;
