@@ -26,6 +26,26 @@ Desenvolvimento de uma API que concentrará dados de usuários, anotações dos 
 - Criação de notas vinculadas à um ID de usuário único;
 - Métodos para atualização de cadastro, senhas criptografadas, possibilidade de adicionar tags e links à uma nota de id único.
 
+
+#
+### 📘 Bibliotecas utilizadas
+  `Express`
+  `Nodemon`
+  `Express-Async-Errors`
+  `Sqlite`
+  `Sqlite3`
+  `bcryptjs`
+  `Knex`
+
+<br>
+
+### 💻 Programas utilizados para teste e desenvolvimento
+  `Insomnia`
+  `Beekeper Studio`
+#
+<br>
+<br>
+
 ## 📄 Referência
 
  - [Rockeseat](https://www.rocketseat.com.br/)
