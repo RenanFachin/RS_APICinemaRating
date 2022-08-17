@@ -28,7 +28,7 @@ function ensureAuthenticated(request, response, next){
 
         // Criando request.user com uma propriedade chamada de ID e adicionado o user_id que veio do verify
         request.user = {
-            id: Number(user_id)
+            id: Number(user_id),
         };
 
         // Chamando a próxima função (next)
