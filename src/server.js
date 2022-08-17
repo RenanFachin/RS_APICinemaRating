@@ -6,6 +6,8 @@ require("express-async-errors");
 // Importando o APP ERROR
 const AppError = require("./utils/AppError")
 
+const uploadConfig = require("./configs/upload") // Importando as configurações de upload
+
 // Importando o express e armazenando na constante express
 const express = require("express");
 // Importando do index.js de routes a função routes que é executada quando algo é enviado pelo /users
@@ -19,6 +21,9 @@ const app = express();
 
 app.use(express.json());
 app.use(routes);
+
+// Buscando o arquivo da foto do usuário
+app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER))
 
 
 app.use( ( error, request, response, next ) => {
