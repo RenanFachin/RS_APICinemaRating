@@ -7,6 +7,12 @@ const AppError = require("../utils/AppError");
 // Importando uma função do BCRYPT para fazer a comparação das senhas criptografadas
 const { compare } = require("bcryptjs");
 
+// Importando a configuração do JSW criada em configs/auth.js
+const authConfig = require("../configs/auth")
+
+// Importando um método de dentro de jsonwebtoken
+const { sign } = require("jsonwebtoken")
+
 
 class SessionsController {
     async create (request, response){
@@ -30,7 +36,18 @@ class SessionsController {
             throw new AppError("E-mail e/ou senha incorreta", 401);
         }
 
-        return response.json(user);
+
+        // Fazendo a criaçaõ do token de autenticação
+        // Fazendo com a desestruturação a atribuição dos elementos do objeto
+        const { secret, expiresIn } = authConfig.jwt
+
+        // Criando o token
+        const token = sign({}, secret, {
+            subject: String(user.id), // Inserindo dento do token o id capturado
+            expiresIn // Validando o token
+        })
+
+        return response.json({user, token});
     }
 }
 
