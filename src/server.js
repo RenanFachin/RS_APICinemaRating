@@ -8,6 +8,8 @@ const AppError = require("./utils/AppError")
 
 const uploadConfig = require("./configs/upload") // Importando as configurações de upload
 
+// Importando o cors
+const cors = require("cors")
 // Importando o express e armazenando na constante express
 const express = require("express");
 // Importando do index.js de routes a função routes que é executada quando algo é enviado pelo /users
@@ -18,7 +20,7 @@ migrationsRun();
 
 // Criando a constante app para chamar a express que foi importada
 const app = express();
-
+app.use(cors())
 app.use(express.json());
 app.use(routes);
 
