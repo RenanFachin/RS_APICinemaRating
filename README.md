@@ -37,7 +37,7 @@ Desenvolvimento de uma API que concentrará dados de usuários, anotações dos 
   `bcryptjs`
   `Knex`
   `jsonwebtoken`
-
+  `Cors`
 <br>
 
 ### 💻 Programas utilizados para teste e desenvolvimento

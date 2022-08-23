@@ -2,10 +2,10 @@ const { Router } = require("express");
 
 const NotesController = require("../controllers/NotesController");
 
-const notesRoutes = Router();
-
 // Importando o MIDDLEWARE de autenticação
 const ensureAuthenticated = require("../middleware/ensureAuthenticated");
+
+const notesRoutes = Router();
 
 const notesController = new NotesController();
 

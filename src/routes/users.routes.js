@@ -12,6 +12,10 @@ const UserAvatarController = require("../controllers/UserAvatarController");
 // Inicializando a função ROUTER que veio do express e armazenando na constante usersRouters
 const usersRoutes = Router();
 
+
+// Importando o MIDDLEWARE de autenticação
+const ensureAuthenticated = require("../middleware/ensureAuthenticated");
+
 // upload será a constante de inicialização do multer com as configurações
 const upload = multer(uploadConfig.MULTER)
 
@@ -19,8 +23,6 @@ const upload = multer(uploadConfig.MULTER)
 const usersController = new UsersControlller(); // Instanciando o UserController
 const userAvatarController = new UserAvatarController();
 
-// Importando o MIDDLEWARE de autenticação
-const ensureAuthenticated = require("../middleware/ensureAuthenticated");
 
 // Método POST
 usersRoutes.post("/", usersController.create);  // usersController tem a propriedade create que é a função criada
