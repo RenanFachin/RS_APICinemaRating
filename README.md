@@ -38,6 +38,8 @@ Desenvolvimento de uma API que concentrará dados de usuários, anotações dos 
   `Knex`
   `jsonwebtoken`
   `Cors`
+  `DotEnv`
+  `PM2`
 <br>
 
 ### 💻 Programas utilizados para teste e desenvolvimento
